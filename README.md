@@ -1,142 +1,40 @@
-using System;
-using System.Globalization;
-using System.Threading;
+# Trịnh Đức Việt
 
-class Person
-{
-    private string name;
-    private string address;
-    private double salary;
+**Computer Science engineer | Applied AI & software development**
 
-    public Person(string name, string address, double salary)
-    {
-        this.name = name;
-        this.address = address;
-        this.salary = salary;
-    }
+I'm a Computer Science graduate from **Hung Yen University of Technology and Education** (Gifted and Talented Engineering Program, 2026).
 
-    public string GetName()
-    {
-        return name;
-    }
+I enjoy working on problems where software meets language and data. Recently, I've been exploring how to make AI-powered applications more useful and dependable — particularly how they retrieve information, handle questions outside their knowledge, and show the sources behind an answer.
 
-    public string GetAddress()
-    {
-        return address;
-    }
+## Selected work
 
-    public double GetSalary()
-    {
-        return salary;
-    }
+### [Sử Việt — Vietnamese History RAG Chatbot](https://github.com/trducviet/vietnam-history-rag)
 
-    public static Person InputPersonInfo()
-    {
-        string name, address, sSalary;
-        double salary;
+My graduation project: a Vietnamese-language history chatbot built around **retrieval-augmented generation (RAG)**. Rather than relying on a language model alone, the system retrieves relevant material from a curated knowledge base before generating an answer.
 
-        Console.WriteLine("Nhập thông tin của Người");
-        Console.Write("Họ và tên: ");
-        name = Console.ReadLine();
+- **Stack:** Python, TypeScript, Node.js/Express, BM25, FAISS, sentence embeddings, and LLM APIs.
+- **Approach:** Hybrid retrieval with reciprocal rank fusion, source citations, and handling for questions outside the supported material.
+- **Evaluation:** Internal testing on 500 answer-quality questions (mean **8.766/10**) and 300 retrieval queries (**94.33% Recall@5**).
 
-        Console.Write("Địa chỉ: ");
-        address = Console.ReadLine();
+The evaluated knowledge base focuses on selected Vietnamese history topics from **1930–1975**. These are project-specific benchmark results, not an independent evaluation.
 
-        while (true)
-        {
-            Console.Write("Lương: ");
-            sSalary = Console.ReadLine();
-            if (double.TryParse(sSalary, out salary))
-            {
-                if (salary >= 0)
-                    break;
-                else
-                    Console.WriteLine("Lương phải là số dương.");
-            }
-            else
-            {
-                Console.WriteLine("Bạn phải nhập một số hợp lệ cho lương.");
-            }
-        }
+[Explore the project and its evaluation reports](https://github.com/trducviet/vietnam-history-rag) · [View the academic demo package](https://github.com/trducviet/vietnam-history-rag-defense-v1)
 
-        return new Person(name, address, salary);
-    }
+### Text-to-SQL chatbot research
 
-    public static void DisplayPersonInfo(Person person)
-    {
-        Console.WriteLine("Thông tin của Người bạn đã nhập:");
-        Console.WriteLine($"Họ và tên: {person.GetName()}");
-        Console.WriteLine($"Địa chỉ: {person.GetAddress()}");
-        Console.WriteLine($"Lương: {person.GetSalary().ToString("C0", CultureInfo.GetCultureInfo("vi-VN"))}");
-        Console.WriteLine();
-    }
-}
+During a three-month internship at the **Institute of Information Technology and Electronics, Military Science and Technology Institute**, I researched natural-language-to-SQL approaches and built an early chatbot prototype for querying databases through natural-language questions.
 
-class Program
-{
-    static void Main()
-    {
-        Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("vi-VN");
-        Console.OutputEncoding = System.Text.Encoding.UTF8;
+This was an experimental prototype, separate from my graduation project. My final internship evaluation was **9.0/10**.
 
-        Console.WriteLine("=====Chương trình Quản lý Người=====");
-        int n;
-        while (true)
-        {
-            Console.Write("Nhập số người cần quản lý: ");
-            if (int.TryParse(Console.ReadLine(), out n) && n > 0)
-                break;
-            else
-                Console.WriteLine("Vui lòng nhập một số nguyên dương.");
-        }
+## Technical background
 
-        Person[] persons = new Person[n];
+- **Languages:** Python, TypeScript, JavaScript, SQL
+- **Backend:** Node.js, Express
+- **AI & retrieval:** RAG, Text-to-SQL, BM25, FAISS, vector search, LLM integration
+- **Foundations:** Databases, data structures and algorithms, object-oriented programming
 
-        for (int i = 0; i < n; i++)
-        {
-            persons[i] = Person.InputPersonInfo();
-        }
+I'm continuing to learn by building, testing, and improving small systems that solve concrete problems.
 
-        Console.WriteLine("Thông tin của Người bạn đã nhập:");
+---
 
-        foreach (Person person in persons)
-        {
-            Person.DisplayPersonInfo(person);
-        }
-
-        Console.WriteLine("Đang sắp xếp theo lương tăng dần...");
-        persons = SortBySalary(persons);
-
-        Console.WriteLine("Thông tin của Người sau khi sắp xếp theo lương:");
-
-        foreach (Person person in persons)
-        {
-            Person.DisplayPersonInfo(person);
-        }
-    }
-
-    static Person[] SortBySalary(Person[] persons)
-    {
-        try
-        {
-            for (int i = 0; i < persons.Length - 1; i++)
-            {
-                for (int j = 0; j < persons.Length - 1 - i; j++)
-                {
-                    if (persons[j].GetSalary() > persons[j + 1].GetSalary())
-                    {
-                        Person temp = persons[j];
-                        persons[j] = persons[j + 1];
-                        persons[j + 1] = temp;
-                    }
-                }
-            }
-            return persons;
-        }
-        catch
-        {
-            throw new Exception("Không thể sắp xếp thông tin Người");
-        }
-    }
-}
- 
+[GitHub repositories](https://github.com/trducviet?tab=repositories)
