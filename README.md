@@ -1,40 +1,56 @@
 # Trịnh Đức Việt
 
-**Computer Science engineer | Applied AI & software development**
+**Computer Science Engineer · Applied AI & Backend Development**
 
-I'm a Computer Science graduate from **Hung Yen University of Technology and Education** (Gifted and Talented Engineering Program, 2026).
+I'm a Computer Science graduate from Hung Yen University of Technology and Education (Gifted and Talented Engineering Program, 2026).
 
-I enjoy working on problems where software meets language and data. Recently, I've been exploring how to make AI-powered applications more useful and dependable — particularly how they retrieve information, handle questions outside their knowledge, and show the sources behind an answer.
+I like building the software around machine learning: preparing data, making models accessible through APIs, and checking whether the output is actually useful. My recent projects span document-grounded chatbots, computer vision, and predictive modeling.
 
-## Selected work
+## Projects
 
 ### [Sử Việt — Vietnamese History RAG Chatbot](https://github.com/trducviet/vietnam-history-rag)
 
-My graduation project: a Vietnamese-language history chatbot built around **retrieval-augmented generation (RAG)**. Rather than relying on a language model alone, the system retrieves relevant material from a curated knowledge base before generating an answer.
+My individual graduation project. A Vietnamese-language chatbot that retrieves relevant historical sources before generating answers, with citations and safeguards for unsupported questions.
 
-- **Stack:** Python, TypeScript, Node.js/Express, BM25, FAISS, sentence embeddings, and LLM APIs.
-- **Approach:** Hybrid retrieval with reciprocal rank fusion, source citations, and handling for questions outside the supported material.
-- **Evaluation:** Internal testing on 500 answer-quality questions (mean **8.766/10**) and 300 retrieval queries (**94.33% Recall@5**).
+**Python · TypeScript · Node.js/Express · BM25 · FAISS · RRF · LLM APIs**
 
-The evaluated knowledge base focuses on selected Vietnamese history topics from **1930–1975**. These are project-specific benchmark results, not an independent evaluation.
+- Combined keyword and vector retrieval with reciprocal rank fusion.
+- Evaluated the system internally on 500 answer-quality questions (**8.766/10** mean score) and 300 retrieval queries (**94.33% Recall@5**).
+- The evaluated corpus focuses on selected topics from **1930–1975**, rather than comprehensive coverage of Vietnamese history.
 
-[Explore the project and its evaluation reports](https://github.com/trducviet/vietnam-history-rag) · [View the academic demo package](https://github.com/trducviet/vietnam-history-rag-defense-v1)
+[Source code & reports](https://github.com/trducviet/vietnam-history-rag) · [Academic demo package](https://github.com/trducviet/vietnam-history-rag-defense-v1)
 
-### Text-to-SQL chatbot research
+### [Plant Disease Classifier](https://github.com/trducviet/plant-disease-classifier)
 
-During a three-month internship at the **Institute of Information Technology and Electronics, Military Science and Technology Institute**, I researched natural-language-to-SQL approaches and built an early chatbot prototype for querying databases through natural-language questions.
+An image-classification project for four apple-leaf conditions. The experiments compare DenseNet121 and EfficientNet variants, explore class imbalance and ensembles, and use Grad-CAM to inspect predictions.
 
-This was an experimental prototype, separate from my graduation project. My final internship evaluation was **9.0/10**.
+**Python · PyTorch · EfficientNet · DenseNet · FastAPI**
+
+- The notebook reports **97% accuracy** and **0.93 macro F1** for a soft-voting ensemble on a **99-image test set**.
+- A separate EfficientNet checkpoint powers the local image-prediction API; those ensemble metrics do not describe the API model.
+
+### [Heart Disease Prediction API](https://github.com/trducviet/heart-disease-prediction-api)
+
+A small machine-learning API built around logistic regression, feature selection, and saved preprocessing steps.
+
+**Python · scikit-learn · pandas · Flask**
+
+- Trains and saves a classification model, then serves predictions through a REST endpoint.
+- An educational experiment, **not a medical diagnosis or clinical decision tool**.
+
+## Research experience
+
+During a **three-month internship** at the Institute of Information Technology and Electronics, Military Science and Technology Institute, I explored **Text-to-SQL** and built an early chatbot prototype for asking database questions in natural language. The internship received a final evaluation of **9.0/10**.
 
 ## Technical background
 
-- **Languages:** Python, TypeScript, JavaScript, SQL
-- **Backend:** Node.js, Express
-- **AI & retrieval:** RAG, Text-to-SQL, BM25, FAISS, vector search, LLM integration
-- **Foundations:** Databases, data structures and algorithms, object-oriented programming
-
-I'm continuing to learn by building, testing, and improving small systems that solve concrete problems.
+**Languages:** Python, TypeScript, JavaScript, SQL  
+**Backend:** Node.js, Express, Flask, FastAPI  
+**AI & data:** RAG, Text-to-SQL, hybrid retrieval, FAISS, BM25, PyTorch, scikit-learn  
+**Fundamentals:** Database systems, data structures & algorithms, object-oriented programming
 
 ---
 
-[GitHub repositories](https://github.com/trducviet?tab=repositories)
+[All repositories](https://github.com/trducviet?tab=repositories)
+
+*Evaluation figures above are reported in the individual project repositories and were not independently verified.*
